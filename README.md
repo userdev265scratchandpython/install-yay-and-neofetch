@@ -7,6 +7,6 @@ sudo curl -sSL https://raw.githubusercontent.com/userdev265scratchandpython/inst
 
 this repo contains scripts to install yay, i3wm, sway and neofetch on arch. it is easy to use and will have a compiled python-based binary.
 
-(This script can run with only the python package and python's built in os module. requires bash installed)
+(This script can run with only the python package, python's built in os module and python's built in time module. requires bash installed and root(sudo) access(not being logged in as root, this will not work))
 
 # Thaks to Catppuccin for the themes that are installable to alacritty.
