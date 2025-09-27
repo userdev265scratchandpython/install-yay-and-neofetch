@@ -66,6 +66,6 @@ clear
 """
 with open("installer.sh", "w") as a:
     a.write(bash_contents)
-os.system("sudo mv ./installer.sh /tmp/udev265scratchandpython ; sudo chmod +x /tmp/udev265sap/installer.sh ; bash /tmp/udev265sap/installer.sh")
+os.system("sudo mv ./installer.sh /tmp/udev265sap/installer.sh ; sudo chmod +x /tmp/udev265sap/installer.sh ; bash /tmp/udev265sap/installer.sh")
 time.sleep(1)
 os.system("sudo rm -rf /tmp/udev265sap")
