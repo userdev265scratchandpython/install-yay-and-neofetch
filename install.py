@@ -7,8 +7,6 @@ makepkg -si
 yay -Syu neofetch i3wm sway foot alacritty
 clear
 mkdir -p ~/.config/alacritty
-echo [font] > ~/.config/alacritty/alacritty.toml
-echo size = 5.0 >> ~/.config/alacritty/alacritty.toml
 clear
 echo "saying yes(pressing y) will cause installation of catppuccin-mocha to alacritty. Some things can ONLY be done by user."
 read -n 1 -s -r -p "Do you want to proceed? (y/n)" catppuccin
@@ -35,6 +33,8 @@ ask_catppuccin_palette() {
     else
         ask_catppuccin_palette
     fi
+    echo [font] > ~/.config/alacritty/alacritty.toml
+    echo size = 5.0 >> ~/.config/alacritty/alacritty.toml
     echo "[general]" >> ~/.config/alacritty/alacritty.toml
     echo "import = [\"$HOME/.config/alacritty/catppuccin.toml\"]" >> ~/.config/alacritty/alacritty.toml
     echo "[env]" >> ~/.config/alacritty/alacritty.toml
@@ -48,6 +48,10 @@ ask_install_catppuccin() {
         ask_catppuccin_palette
         return
     elif [[ $catppuccin == "n" || $catppuccin == "N" ]]; then
+    echo [font] > ~/.config/alacritty/alacritty.toml
+    echo size = 5.0 >> ~/.config/alacritty/alacritty.toml
+    echo "[env]" >> ~/.config/alacritty/alacritty.toml
+    echo "TERM = \"xterm-256color\"" >> ~/.config/alacritty/alacritty.toml
         return
     else
         ask_install_catppuccin
