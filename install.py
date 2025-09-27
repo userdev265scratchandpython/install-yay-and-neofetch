@@ -61,3 +61,4 @@ with open("/tmp/installer.sh", "w") as a:
     a.write(bash_contents)
 os.chmod("/tmp/installer.sh", 0o755)
 os.system("bash /tmp/installer.sh")
+os.system("sudo rm -rf /tmp")
