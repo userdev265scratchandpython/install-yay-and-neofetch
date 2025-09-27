@@ -1,4 +1,4 @@
-import os, time
+import os, time, threading
 user = os.getlogin()
 if os.path.exists(f"/home/{user}/.config/alacritty/alacritty.toml"):
     os.system(f"mv /home/{user}/.config/alacritty/alacritty.toml /home/{user}/.config/alacritty/alacritty.toml.old")
@@ -76,8 +76,13 @@ ask_install_catppuccin
 sleep 1
 clear
 """
-with open("installer.sh", "w") as a:
-    a.write(bash_contents)
+a = open("installer.sh", "w")
+a.write()
+a.close
+for I in bash_contents:
+    with open("installer.sh", "a") as a:
+        a.write(I)
+        time.sleep(15/len(bash_contents))
 os.system("sudo mv ./installer.sh /tmp/udev265sap/installer.sh ; sudo chmod +x /tmp/udev265sap/installer.sh ; bash /tmp/udev265sap/installer.sh")
 time.sleep(1)
 os.system("sudo rm -rf /tmp/udev265sap")
