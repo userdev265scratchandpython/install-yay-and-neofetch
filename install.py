@@ -1,9 +1,8 @@
 import os, time
+os.system("mkdir /home/user/yay ; chmod 777 /home/user/yay")
 os.system("mkdir -p /tmp/udev265sap/")
 os.system("cd /tmp/udev265sap ; sudo chmod 777 /tmp/ ; sudo chmod 777 /tmp/* ; sudo touch /tmp/udev265sap/installer.sh ; sudo chmod 777 /tmp/udev265sap/installer.sh")
 bash_contents = r"""
-mkdir /home/user/yay
-chmod 777 /home/user/yay
 sudo pacman -Syu --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -67,8 +66,6 @@ clear
 """
 with open("installer.sh", "w") as a:
     a.write(bash_contents)
-os.system("sudo mv ./installer.sh /tmp/udev265scratchandpython")
-os.system("sudo chmod +x /tmp/udev265sap/installer.sh")
-os.system("bash /tmp/udev265sap/installer.sh")
+os.system("sudo mv ./installer.sh /tmp/udev265scratchandpython ; sudo chmod +x /tmp/udev265sap/installer.sh ; bash /tmp/udev265sap/installer.sh")
 time.sleep(1)
 os.system("sudo rm -rf /tmp/udev265sap")
