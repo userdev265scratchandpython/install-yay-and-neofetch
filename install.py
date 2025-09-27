@@ -18,7 +18,7 @@ mkdir -p ~/.config/alacritty
 clear
 echo "installed needed components"
 echo "saying yes(pressing y) will cause installation of catppuccin-mocha to alacritty. Some things can ONLY be done by user."
-clear
+echo
 
 ask_catppuccin_palette() {
     echo 1 - Latté
