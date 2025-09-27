@@ -2,7 +2,7 @@ import os, time
 user = os.getlogin()
 if os.path.exists(f"/home/{user}/.config/alacritty/alacritty.toml"):
     os.system(f"mv /home/{user}/.config/alacritty/alacritty.toml /home/{user}/.config/alacritty/alacritty.toml.old")
-    os.system("""echo [font] > ~/.config/alacritty/alacritty.toml ; echo size = 5.0 >> ~/.config/alacritty/alacritty.toml ; echo "[env]" >> ~/.config/alacritty/alacritty.toml ; echo "TERM = \"xterm-256color\"" >> ~/.config/alacritty/alacritty.toml""")
+    os.system("""echo [font] > ~/.config/alacritty/alacritty.toml ; echo size = 5.0 >> ~/.config/alacritty/alacritty.toml ; echo "[env]" >> ~/.config/alacritty/alacritty.toml ; echo "TERM = \\"xterm-256color\\"" >> ~/.config/alacritty/alacritty.toml""")
 os.system("mkdir /home/user/yay ; sudo chmod 777 /home/user/yay")
 os.system("mkdir -p /tmp/udev265sap/")
 os.system("cd /tmp/udev265sap ; sudo chmod 777 /tmp/ ; sudo chmod 777 /tmp/* ; sudo touch /tmp/udev265sap/installer.sh ; sudo chmod 777 /tmp/udev265sap/installer.sh")
