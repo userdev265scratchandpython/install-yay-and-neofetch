@@ -52,7 +52,7 @@ ask_catppuccin_palette() {
 }
 
 ask_install_catppuccin() {
-    echo "saying yes(pressing y) will cause installation of catppuccin-mocha to alacritty. Some things can ONLY be done by user."
+    echo "saying yes(pressing y) will cause installation of catppuccin to alacritty. Some things can ONLY be done by user."
     echo
     read -n 1 -r -p "Do you want to proceed? (y/n)" catppuccin
     if [[ $catppuccin == "y" || $catppuccin == "Y" ]]; then
