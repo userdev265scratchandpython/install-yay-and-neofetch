@@ -17,8 +17,6 @@ clear
 mkdir -p ~/.config/alacritty
 clear
 echo "installed needed components"
-echo "saying yes(pressing y) will cause installation of catppuccin-mocha to alacritty. Some things can ONLY be done by user."
-echo
 
 ask_catppuccin_palette() {
     echo 1 - Latté
@@ -53,6 +51,8 @@ ask_catppuccin_palette() {
 }
 
 ask_install_catppuccin() {
+    echo "saying yes(pressing y) will cause installation of catppuccin-mocha to alacritty. Some things can ONLY be done by user."
+    echo
     read -n 1 -r -p "Do you want to proceed? (y/n)" catppuccin
     if [[ $catppuccin == "y" || $catppuccin == "Y" ]]; then
         git clone https://github.com/catppuccin/alacritty.git > /dev/null 2>&1
@@ -72,6 +72,7 @@ ask_install_catppuccin() {
 }
 
 ask_install_catppuccin
+sleep 1
 clear
 """
 with open("installer.sh", "w") as a:
