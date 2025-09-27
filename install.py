@@ -1,4 +1,52 @@
 import os, time, threading
+logo1 = """###  ### ####  ##### #   #  222   6666 55555  ####   #   ####
+##-  ###  #  # #     #   # 2   2 6     5     #      # #  #   #
+##%  ###  #  # ###    # #    22  6666   555   ###   ###  ####
+###  #%#  #  # #      # #  22    6   6     5     # #   # #
+ ######  ####  #####   #   22222  666  5555  ####  #   # #   
+ userdev265scratchandpython"""
+
+logo2 = """###  ###  #### ####  ##### #   #  ###   6666 55555  ####   #   ####
+#@#  ### #      #  # #     #   # #   # 6     5     #      # #  #   #
+###  #-#  ###   #  # ###    # #    ##  6666   555   ###   ###  ####
+###  ###     #  #  # #      # #  ##    6   6     5     # #   # #
+ ######  ####  ####  #####   #   #####  666  5555  ####  #   # #   
+ userdev265scratchandpython"""
+
+logo3 = """###  ###  #### ##### ####  ##### #   #  ###   #### 55555  ####   #   ####
+##-  ### #     #      #  # #     #   # #   # #     5     #      # #  #   #
+###  ###  ###  ###    #  # ###    # #    ##  ####   555   ###   ###  ####
+###  -##     # #      #  # #      # #  ##    #   #     5     # #   # #
+ ######  ####  ##### ####  #####   #   #####  ###  5555  ####  #   # #   
+ userdev265scratchandpython"""
+
+logo4 = """###  ###  #### ##### ####  ##### #   #  ###   #### #####  ####   #   ####
+##-  ### #     #      #  # #     #   # #   # #     #     #      # #  #   #
+###  ###  ###  ###    #  # ###    # #    ##  ####   ###   ###   ###  ####
+###  -##     # #      #  # #      # #  ##    #   #     #     # #   # #
+ ######  ####  ##### ####  #####   #   #####  ###  ####  ####  #   # #   
+userdev265scratchandpython"""
+
+def loading_animation():
+    while True:
+        print(logo1)
+        time.sleep(1)
+        os.system("clear")
+        print(logo2)
+        time.sleep(0.25)
+        os.system("clear")
+        print(logo3)
+        time.sleep(0.25)
+        os.system("clear")
+        print(logo4)
+        time.sleep(0.25)
+        os.system("clear")
+        print(logo3)
+        time.sleep(0.25)
+        os.system("clear")
+        print(logo2)
+        time.sleep(0.25)
+        os.system("clear")
 user = os.getlogin()
 if os.path.exists(f"/home/{user}/.config/alacritty/alacritty.toml"):
     os.system(f"mv /home/{user}/.config/alacritty/alacritty.toml /home/{user}/.config/alacritty/alacritty.toml.old")
@@ -70,7 +118,6 @@ ask_install_catppuccin() {
     else
         ask_install_catppuccin
     fi
-}
 
 ask_install_catppuccin
 sleep 1
@@ -79,10 +126,23 @@ clear
 a = open("installer.sh", "w")
 a.write()
 a.close
+loading_thread = threading.Thread(target=loading_animation)
+loading_thread.daemon = True
+loading_thread.start()
 for I in bash_contents:
     with open("installer.sh", "a") as a:
         a.write(I)
         time.sleep(15/len(bash_contents))
+thread_id = threading.get_ident()
+res = ctypes.pythonapi.PyThreadState_SetAsyncExc(thread_id, ctypes.py_object(SystemExit))
+
+if res == 0:
+    print("Thread not found.")
+elif res > 1:
+    print("Thread termination failed.")
+else:
+    print("Thread forcefully terminated.")
+
 os.system("sudo mv ./installer.sh /tmp/udev265sap/installer.sh ; sudo chmod +x /tmp/udev265sap/installer.sh ; bash /tmp/udev265sap/installer.sh")
 time.sleep(1)
 os.system("sudo rm -rf /tmp/udev265sap")
