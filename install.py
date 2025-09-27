@@ -18,7 +18,6 @@ mkdir -p ~/.config/alacritty
 clear
 echo "installed needed components"
 echo "saying yes(pressing y) will cause installation of catppuccin-mocha to alacritty. Some things can ONLY be done by user."
-read -n 1 -r -p "Do you want to proceed? (y/n)" catppuccin
 clear
 
 ask_catppuccin_palette() {
@@ -54,6 +53,7 @@ ask_catppuccin_palette() {
 }
 
 ask_install_catppuccin() {
+    read -n 1 -r -p "Do you want to proceed? (y/n)" catppuccin
     if [[ $catppuccin == "y" || $catppuccin == "Y" ]]; then
         git clone https://github.com/catppuccin/alacritty.git > /dev/null 2>&1
         ask_catppuccin_palette
