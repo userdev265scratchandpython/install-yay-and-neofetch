@@ -6,17 +6,20 @@ os.system("mkdir /home/user/yay ; sudo chmod 777 /home/user/yay")
 os.system("mkdir -p /tmp/udev265sap/")
 os.system("cd /tmp/udev265sap ; sudo chmod 777 /tmp/ ; sudo chmod 777 /tmp/* ; sudo touch /tmp/udev265sap/installer.sh ; sudo chmod 777 /tmp/udev265sap/installer.sh")
 bash_contents = r"""
-sudo pacman -Syu --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
+echo "installig needed components..."
+sudo pacman -Syu --needed --noconfirm git base-devel > /dev/null 2>&1
+git clone https://aur.archlinux.org/yay.git > /dev/null 2>&1
 cd yay
 makepkg -si
-yay -Syu neofetch i3wm sway foot alacritty
+clear
+yay -Syu --noconfirm --needed neofetch i3wm sway foot alacritty
 clear
 mkdir -p ~/.config/alacritty
 clear
+echo "installed needed components"
 echo "saying yes(pressing y) will cause installation of catppuccin-mocha to alacritty. Some things can ONLY be done by user."
-read -n 1 -s -r -p "Do you want to proceed? (y/n)" catppuccin
-echo
+read -n 1 -r -p "Do you want to proceed? (y/n)" catppuccin
+clear
 
 ask_catppuccin_palette() {
     echo 1 - Latté
@@ -39,25 +42,29 @@ ask_catppuccin_palette() {
     else
         ask_catppuccin_palette
     fi
+    echo -n "making config... "
     echo [font] > ~/.config/alacritty/alacritty.toml
     echo size = 5.0 >> ~/.config/alacritty/alacritty.toml
     echo "[general]" >> ~/.config/alacritty/alacritty.toml
     echo "import = [\"$HOME/.config/alacritty/catppuccin.toml\"]" >> ~/.config/alacritty/alacritty.toml
     echo "[env]" >> ~/.config/alacritty/alacritty.toml
     echo "TERM = \"xterm-256color\"" >> ~/.config/alacritty/alacritty.toml
+    echo "done"
     return
 }
 
 ask_install_catppuccin() {
     if [[ $catppuccin == "y" || $catppuccin == "Y" ]]; then
-        git clone https://github.com/catppuccin/alacritty.git
+        git clone https://github.com/catppuccin/alacritty.git > /dev/null 2>&1
         ask_catppuccin_palette
         return
     elif [[ $catppuccin == "n" || $catppuccin == "N" ]]; then
-    echo [font] > ~/.config/alacritty/alacritty.toml
-    echo size = 5.0 >> ~/.config/alacritty/alacritty.toml
-    echo "[env]" >> ~/.config/alacritty/alacritty.toml
-    echo "TERM = \"xterm-256color\"" >> ~/.config/alacritty/alacritty.toml
+        echo -n "making config... "
+        echo [font] > ~/.config/alacritty/alacritty.toml
+        echo size = 5.0 >> ~/.config/alacritty/alacritty.toml
+        echo "[env]" >> ~/.config/alacritty/alacritty.toml
+        echo "TERM = \"xterm-256color\"" >> ~/.config/alacritty/alacritty.toml
+        echo "done"
         return
     else
         ask_install_catppuccin
