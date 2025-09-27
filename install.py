@@ -1,5 +1,5 @@
 import os, time
-os.system("mkdir /home/user/yay ; chmod 777 /home/user/yay")
+os.system("mkdir /home/user/yay ; sudo chmod 777 /home/user/yay")
 os.system("mkdir -p /tmp/udev265sap/")
 os.system("cd /tmp/udev265sap ; sudo chmod 777 /tmp/ ; sudo chmod 777 /tmp/* ; sudo touch /tmp/udev265sap/installer.sh ; sudo chmod 777 /tmp/udev265sap/installer.sh")
 bash_contents = r"""
