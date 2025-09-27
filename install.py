@@ -1,5 +1,7 @@
 import os, time
 bash_contents = r"""
+mkdir /home/user/yay
+chmod 777 /home/user/yay
 sudo pacman -Syu --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
