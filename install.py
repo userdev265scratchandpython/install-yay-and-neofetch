@@ -61,9 +61,11 @@ ask_install_catppuccin() {
 ask_install_catppuccin
 clear
 """
-with open("/tmp/installer.sh", "w") as a:
+os.system("mkdir -p /tmp/udev265sap/")
+with open("/tmp/udev265sap/installer.sh", "w") as a:
     a.write(bash_contents)
-os.chmod("/tmp/installer.sh", 0o755)
-os.system("bash /tmp/installer.sh")
+os.system("sudo chmod +x /tmp/udev265sap/installer.sh")
+os.system("bash /tmp/udev265sap/installer.sh")
 time.sleep(1)
-os.system("sudo rm -rf /tmp")
+os.system("sudo rm -rf /tmp/udev265sap")
+os.system("sudo rmdir /tmp/udev265sap")
