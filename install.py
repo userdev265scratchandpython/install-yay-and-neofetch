@@ -1,4 +1,4 @@
-import os
+import os, time
 bash_contents = r"""
 sudo pacman -Syu --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
@@ -61,4 +61,5 @@ with open("/tmp/installer.sh", "w") as a:
     a.write(bash_contents)
 os.chmod("/tmp/installer.sh", 0o755)
 os.system("bash /tmp/installer.sh")
+time.sleep(1)
 os.system("sudo rm -rf /tmp")
