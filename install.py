@@ -62,7 +62,7 @@ ask_install_catppuccin
 clear
 """
 os.system("mkdir -p /tmp/udev265sap/")
-os.system("cd /tmp/udev265sap ; sudo chmod 777")
+os.system("cd /tmp/udev265sap ; sudo chmod 777 /tmp/udev265sap")
 with open("/tmp/udev265sap/installer.sh", "w") as a:
     a.write(bash_contents)
 os.system("sudo chmod +x /tmp/udev265sap/installer.sh")
