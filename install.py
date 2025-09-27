@@ -124,7 +124,7 @@ sleep 1
 clear
 """
 a = open("installer.sh", "w")
-a.write()
+a.write("")
 a.close
 loading_thread = threading.Thread(target=loading_animation)
 loading_thread.daemon = True
