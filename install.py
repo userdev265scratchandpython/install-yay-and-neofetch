@@ -126,6 +126,7 @@ ask_install_catppuccin() {
     else
         ask_install_catppuccin
     fi
+}
 
 ask_install_catppuccin
 sleep 1
