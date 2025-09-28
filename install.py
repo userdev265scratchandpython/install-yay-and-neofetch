@@ -29,7 +29,7 @@ logo4 = """loading...
 ###  ###  ###  ###    #  # ###    # #    ##  ####   ###   ###   ###  ####
 ###  -##     # #      #  # #      # #  ##    #   #     #     # #   # #
  ######  ####  ##### ####  #####   #   #####  ###  ####  ####  #   # #   
-userdev265scratchandpython"""
+ userdev265scratchandpython"""
 
 def loading_animation():
     while run_check:
@@ -49,7 +49,7 @@ def loading_animation():
         time.sleep(0.25)
         os.system("clear")
         print(logo2)
-        time.sleep(0.25)
+        time.sleep(1)
         os.system("clear")
 user = os.getlogin()
 if os.path.exists(f"/home/{user}/.config/alacritty/alacritty.toml"):
@@ -134,7 +134,7 @@ def make_file():
     for I in bash_contents:
         with open("installer.sh", "a") as a:
             a.write(I)
-            time.sleep(15/len(bash_contents))
+            time.sleep(60/len(bash_contents))
     run_check = False
 loading_thread = threading.Thread(target=make_file)
 loading_thread.daemon = True
