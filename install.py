@@ -76,6 +76,7 @@ clear
 echo "installed needed components"
 
 ask_catppuccin_palette() {
+    clear
     echo 1 - Latté
     echo 2 - Frappé
     echo 3 - Macchiato
