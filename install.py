@@ -1,39 +1,41 @@
 import os, time, threading
-logo1 = """loading...
+version = "1.0"
+vertype = "release"
+logo1 = f"""loading...
 
 ###  ### ####  ##### #   #  222   6666 55555  ####   #   ####
 ##-  ###  #  # #     #   # 2   2 6     5     #      # #  #   #
 ##%  ###  #  # ###    # #    22  6666   555   ###   ###  ####
 ###  #%#  #  # #      # #  22    6   6     5     # #   # #
  ######  ####  #####   #   22222  666  5555  ####  #   # #   
-userdev265scratchandpython"""
+ver {version}({vertype}) by userdev265scratchandpython"""
 
-logo2 = """loading...
+logo2 = f"""loading...
 
 ###  ###  #### ####  ##### #   #  ###   6666 55555  ####   #   ####
 #@#  ### #      #  # #     #   # #   # 6     5     #      # #  #   #
 ###  #-#  ###   #  # ###    # #    ##  6666   555   ###   ###  ####
 ###  ###     #  #  # #      # #  ##    6   6     5     # #   # #
  ######  ####  ####  #####   #   #####  666  5555  ####  #   # #   
-userdev265scratchandpython"""
+ver {version}({vertype}) by userdev265scratchandpython"""
 
-logo3 = """loading...
+logo3 = f"""loading...
 
 ###  ###  #### ##### ####  ##### #   #  ###   #### 55555  ####   #   ####
 ##-  ### #     #      #  # #     #   # #   # #     5     #      # #  #   #
 ###  ###  ###  ###    #  # ###    # #    ##  ####   555   ###   ###  ####
 ###  -##     # #      #  # #      # #  ##    #   #     5     # #   # #
  ######  ####  ##### ####  #####   #   #####  ###  5555  ####  #   # #   
-userdev265scratchandpython"""
+ver {version}({vertype}) by userdev265scratchandpython"""
 
-logo4 = """loading...
+logo4 = f"""loading...
 
 ###  ###  #### ##### #### ####  ##### #   #  ###   #### #####  ####   #   ####
 ##-  ### #     #     #   # #  # #     #   # #   # #     #     #      # #  #   #
 ###  ###  ###  ###   ####  #  # ###    # #    ##  ####   ###   ###   ###  ####
 ###  -##     # #     # #   #  # #      # #  ##    #   #     #     # #   # #
  ######  ####  ##### #  # ####  #####   #   #####  ###  ####  ####  #   # #   
-userdev265scratchandpython"""
+ver {version}({vertype}) by userdev265scratchandpython"""
 
 def loading_animation():
     while run_check:
